@@ -10,5 +10,8 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+# Aliases
+alias vi=vim
+
 # Customize to your needs...
-export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+export PATH=/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
