@@ -9,6 +9,15 @@
   home.username = "marco.chan";
   home.homeDirectory = "/Users/marco.chan";
 
+  # Packages to install
+  home.packages = [
+    # pkgs is the set of all packages in the default home.nix implementation
+    pkgs.tmux
+  ];
+
+  # Raw configuration files
+  home.file.".tmux.conf".source = ./tmux.conf;
+
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards
