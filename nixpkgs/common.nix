@@ -7,11 +7,6 @@ in
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  # Home Manager needs a bit of information about you and the
-  # paths it should manage.
-  home.username = "marco";
-  home.homeDirectory = "/Users/marco";
-
   # Packages to install
   home.packages = [
     # pkgs is the set of all packages in the default home.nix implementation
