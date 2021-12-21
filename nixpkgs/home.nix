@@ -19,6 +19,7 @@ in
     pkgs.zsh
     pkgs.clojure
     pkgs.openjdk11
+    pkgs.clj-kondo
   ];
 
   programs.zsh = {
