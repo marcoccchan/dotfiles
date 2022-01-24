@@ -31,15 +31,23 @@ in
 	    emacsMacport = pkgs.emacsMacport;
 	    babashka = pkgs.babashka;
 	    clj-kondo = pkgs.clj-kondo;
+            tmux = pkgs.tmux;
 	    kafkacat = pkgs.kafkacat;
 	  }
   )];
 
   programs.zsh = {
     enable = true;
+    enableAutosuggestions = true;
+    enableCompletion = true;
+    enableSyntaxHighlighting = true;
     profileExtra = ''
       eval "$(/opt/homebrew/bin/brew shellenv)"
     '';
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "git" "docker" "docker-compose" "thefuck" ];
+    };
   };
 
   programs.git = {
