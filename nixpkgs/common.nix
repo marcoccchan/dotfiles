@@ -16,6 +16,7 @@ in
     pkgs.clj-kondo
     pkgs.openjdk11
     pkgs.git
+    pkgs.fzf
   ];
 
   nixpkgs.overlays = [(final: prev:
@@ -31,7 +32,7 @@ in
 	    emacsMacport = pkgs.emacsMacport;
 	    babashka = pkgs.babashka;
 	    clj-kondo = pkgs.clj-kondo;
-            tmux = pkgs.tmux;
+        tmux = pkgs.tmux;
 	    kafkacat = pkgs.kafkacat;
 	  }
   )];
@@ -49,6 +50,8 @@ in
       fi
     '';
     initExtra = ''
+      HIST_FIND_NO_DUPS="true";
+
       # Theme (https://github.com/sindresorus/pure)
       fpath+=/opt/homebrew/share/zsh/site-functions
       autoload -U promptinit; promptinit
@@ -71,10 +74,14 @@ in
     };
   };
 
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
   # Raw configuration files
   home.file.".tmux.conf".source = ./tmux.conf;
 
-  
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards
@@ -85,4 +92,3 @@ in
   # changes in each release.
   home.stateVersion = "21.11";
 }
-

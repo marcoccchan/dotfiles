@@ -11,5 +11,13 @@
   programs.git = {
     userEmail = "marco.chan@fundingcircle.com";
   };
+
+  programs.zsh = {
+    initExtra = ''
+      function sftm {
+        ssh $(sft list-servers | fzf | awk '{ print $1 }')
+      };
+    '';
+  };
 }
 
