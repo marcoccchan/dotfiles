@@ -7,5 +7,9 @@
   # paths it should manage.
   home.username = "marco.chan";
   home.homeDirectory = "/Users/marco.chan";
+
+  programs.git = {
+    userEmail = "marco.chan@fundingcircle.com";
+  };
 }
 

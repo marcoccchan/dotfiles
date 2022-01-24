@@ -1,7 +1,0 @@
-[user]
-	name = Marco Chan
-	email = marco.cc.chan@gmail.com
-[credential]
-	helper = osxkeychain
-[core]
-	editor = vim

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, nixpkgs, ... }:
 
 let
   HOME = config.home.homeDirectory;
@@ -13,16 +13,43 @@ in
     pkgs.tmux
     pkgs.zsh
     pkgs.clojure
-    pkgs.openjdk11
     pkgs.clj-kondo
+    pkgs.openjdk11
+    pkgs.git
   ];
+
+  nixpkgs.overlays = [(final: prev:
+	  let
+	    isM1 = prev.stdenv.hostPlatform.system == "aarch64-darwin";
+	    pkgs_x86_64 = import <nixpkgs> { localSystem = "x86_64-darwin"; };
+	    pkgs =
+	      if isM1
+	      then pkgs_x86_64
+	      else prev;
+	  in
+	  {
+	    emacsMacport = pkgs.emacsMacport;
+	    babashka = pkgs.babashka;
+	    clj-kondo = pkgs.clj-kondo;
+	    kafkacat = pkgs.kafkacat;
+	  }
+  )];
 
   programs.zsh = {
     enable = true;
     profileExtra = ''
-      . ${HOME}/.nix-profile/etc/profile.d/nix.sh
       eval "$(/opt/homebrew/bin/brew shellenv)"
     '';
+  };
+
+  programs.git = {
+    enable = true;
+    userName = "Marco Chan";
+    extraConfig = {
+      github = {
+        user = "marcoccchan";
+      };
+    };
   };
 
   # Raw configuration files
@@ -39,3 +66,4 @@ in
   # changes in each release.
   home.stateVersion = "21.11";
 }
+
