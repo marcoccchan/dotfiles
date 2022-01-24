@@ -43,6 +43,10 @@ in
     enableSyntaxHighlighting = true;
     profileExtra = ''
       eval "$(/opt/homebrew/bin/brew shellenv)"
+
+      if [[ -s ${HOME}/.secrets ]]; then
+        source "${HOME}/.secrets"
+      fi
     '';
     initExtra = ''
       # Theme (https://github.com/sindresorus/pure)
