@@ -44,6 +44,13 @@ in
     profileExtra = ''
       eval "$(/opt/homebrew/bin/brew shellenv)"
     '';
+    initExtra = ''
+      # Theme (https://github.com/sindresorus/pure)
+      fpath+=/opt/homebrew/share/zsh/site-functions
+      autoload -U promptinit; promptinit
+      zstyle :prompt:pure:path color yellow
+      prompt pure
+    '';
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" "docker" "docker-compose" "thefuck" ];

@@ -7,4 +7,6 @@ cask "font-hack-nerd-font"
 cask "font-fira-code"
 
 brew "thefuck"
+# ZSH Prompt (https://github.com/sindresorhus/pure)
+brew "pure"
 
