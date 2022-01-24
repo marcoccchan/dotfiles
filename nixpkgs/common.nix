@@ -13,6 +13,7 @@ in
     pkgs.tmux
     pkgs.zsh
     pkgs.clojure
+    pkgs.leiningen
     pkgs.clj-kondo
     pkgs.openjdk11
     pkgs.git
