@@ -17,7 +17,10 @@
       function sftm {
         ssh $(sft list-servers | fzf | awk '{ print $1 }')
       };
+
+      # enable chruby
+      source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+      source /opt/homebrew/opt/chruby/share/chruby/auto.sh
     '';
   };
 }
-
