@@ -18,6 +18,7 @@ in
     pkgs.openjdk11
     pkgs.git
     pkgs.fzf
+    pkgs.git-extras
   ];
 
   nixpkgs.overlays = [(final: prev:
@@ -73,6 +74,10 @@ in
         user = "marcoccchan";
       };
     };
+    ignores = [
+      ".DS_Store"
+      ".idea"
+    ];
   };
 
   programs.fzf = {

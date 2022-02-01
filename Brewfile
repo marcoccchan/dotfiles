@@ -12,4 +12,4 @@ cask "okta-advanced-server-access"
 brew "thefuck"
 # ZSH Prompt (https://github.com/sindresorhus/pure)
 brew "pure"
-
+brew "git-crypt"
