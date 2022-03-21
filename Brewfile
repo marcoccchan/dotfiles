@@ -13,3 +13,5 @@ brew "thefuck"
 # ZSH Prompt (https://github.com/sindresorhus/pure)
 brew "pure"
 brew "git-crypt"
+brew "plantuml"
+brew "graphviz"

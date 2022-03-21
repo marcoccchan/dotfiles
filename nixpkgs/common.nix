@@ -19,6 +19,7 @@ in
     pkgs.git
     pkgs.fzf
     pkgs.git-extras
+    pkgs.jq
   ];
 
   nixpkgs.overlays = [(final: prev:
