@@ -37,6 +37,7 @@ in
 	    clj-kondo = pkgs.clj-kondo;
         tmux = pkgs.tmux;
 	    kafkacat = pkgs.kafkacat;
+	    openjdk11 = pkgs.openjdk11;
 	  }
   )];
 
