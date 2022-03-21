@@ -78,6 +78,7 @@ in
     ignores = [
       ".DS_Store"
       ".idea"
+      "*.iml"
     ];
   };
 
