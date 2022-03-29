@@ -38,6 +38,8 @@ in
         tmux = pkgs.tmux;
 	    kafkacat = pkgs.kafkacat;
 	    openjdk11 = pkgs.openjdk11;
+	    # overrides the java version used in e.g. leiningen
+	    jdk = pkgs.openjdk11;
 	  }
   )];
 
