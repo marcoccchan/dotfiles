@@ -20,6 +20,7 @@ in
     pkgs.fzf
     pkgs.git-extras
     pkgs.jq
+    pkgs.btop
   ];
 
   nixpkgs.overlays = [(final: prev:
