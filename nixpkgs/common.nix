@@ -83,6 +83,7 @@ in
       ".DS_Store"
       ".idea"
       "*.iml"
+      ".cpcache/"
     ];
   };
 
