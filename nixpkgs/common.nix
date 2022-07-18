@@ -78,6 +78,12 @@ in
       github = {
         user = "marcoccchan";
       };
+      rebase = {
+        autosquash = true;
+      };
+      alias = {
+        fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit -a --fixup";
+      };
     };
     ignores = [
       ".DS_Store"
