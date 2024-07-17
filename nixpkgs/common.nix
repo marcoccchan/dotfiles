@@ -21,6 +21,8 @@ in
     pkgs.git-extras
     pkgs.jq
     pkgs.btop
+    pkgs.python311
+    pkgs.babashka
   ];
 
   nixpkgs.overlays = [(final: prev:
@@ -36,7 +38,7 @@ in
 	    emacsMacport = pkgs.emacsMacport;
 	    babashka = pkgs.babashka;
 	    clj-kondo = pkgs.clj-kondo;
-        tmux = pkgs.tmux;
+        #tmux = pkgs.tmux;
 	    kafkacat = pkgs.kafkacat;
 	    openjdk11 = pkgs.openjdk11;
 	    # overrides the java version used in e.g. leiningen
@@ -55,6 +57,9 @@ in
       if [[ -s ${HOME}/.secrets ]]; then
         source "${HOME}/.secrets"
       fi
+
+      path=(${HOME}/.rd/bin
+            $path)
     '';
     initExtra = ''
       HIST_FIND_NO_DUPS="true";
