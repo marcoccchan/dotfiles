@@ -48,9 +48,9 @@ in
 
   programs.zsh = {
     enable = true;
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     enableCompletion = true;
-    enableSyntaxHighlighting = true;
+    syntaxHighlighting.enable = true;
     profileExtra = ''
       eval "$(/opt/homebrew/bin/brew shellenv)"
 
