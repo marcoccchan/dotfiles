@@ -29,7 +29,7 @@ nix-shell '<home-manager>' -A install
 
 ## Symbolic Link to Github repo
 ```
-cd ~/.config/nixpkgs/
+cd ~/.config/home-manager/
 
 # Work laptop
 ln -s /Users/marco.chan/src/dotfiles/nixpkgs/fc.nix home.nix
